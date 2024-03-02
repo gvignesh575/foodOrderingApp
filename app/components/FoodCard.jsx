@@ -1,7 +1,7 @@
 import Image from "next/image";
 import React from "react";
 
-const FoodCard = ({ image }) => {
+const FoodCard = ({ image, title, ratings, items }) => {
   return (
     <>
       <div className="min-w-[350px] h-[350px] rounded-lg overflow-hidden group p-2 pb-4">
@@ -14,7 +14,7 @@ const FoodCard = ({ image }) => {
           />
         </div>
         <div className="px-2 py-3 flex flex-col gap-1">
-          <div className="font-bold">McDonald{"'"}s</div>
+          <div className="font-bold">{title}</div>
           <div className="flex items-center gap-1">
             <svg
               xmlns="http://www.w3.org/2000/svg"
@@ -28,11 +28,9 @@ const FoodCard = ({ image }) => {
                 clipRule="evenodd"
               />
             </svg>{" "}
-            <span className="font-semibold">4.3 - 33 mins</span>
+            <span className="font-semibold">{ratings}</span>
           </div>
-          <div className="text-gray-600">
-            Burgers, Beverages, Cafe, Desserts
-          </div>
+          <div className="text-gray-600">{items}</div>
           <div className="text-gray-600">Perungalathur</div>
         </div>
       </div>

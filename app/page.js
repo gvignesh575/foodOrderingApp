@@ -1,29 +1,53 @@
-import Image from "next/image";
 import HeroSection from "./components/HeroSection";
 import SlideSection from "./components/SlideSection";
-import SliderComponent from "./components/SliderComponent";
+import ScrollFoodSection from "./components/ScrollFoodSection";
+import ChefSection from "./components/ChefSection";
 import FoodCard from "./components/FoodCard";
+import Restaurants from "./components/Restaurants";
 
 export default function Home() {
   return (
     <div>
       <HeroSection />
       <SlideSection />
-      <div className="w-full max-w-[90%] mx-auto my-5">
-        <div className="text-2xl md:text-4xl font-bold my-3 md:my-6 text-blue-600">
-          Checkout Top Restaurants
-        </div>
-        <div className="w-full p-2 flex items-center overflow-x-scroll space-x-2 scrollbar">
-          <FoodCard image={"/foodScroll/food1.jpg"} />
-          <FoodCard image={"/foodScroll/food2.jpg"} />
-          <FoodCard image={"/foodScroll/food3.jpg"} />
-          <FoodCard image={"/foodScroll/food4.jpg"} />
-          <FoodCard image={"/foodScroll/food5.jpg"} />
-          <FoodCard image={"/foodScroll/food6.jpg"} />
-          <FoodCard image={"/foodScroll/food7.jpg"} />
-          <FoodCard image={"/foodScroll/food8.jpg"} />
-          <FoodCard image={"/foodScroll/food9.jpg"} />
-          <FoodCard image={"/foodScroll/food10.jpg"} />
+      <ScrollFoodSection />
+      <ChefSection />
+      <Restaurants />
+      <div className="w-full py-10 px-10 lg:px-16 mx-auto bg-black text-white">
+        <div className="flex justify-between flex-wrap gap-2">
+          {/* First Column */}
+          <div className="font-bold flex flex-col gap-2">
+            <div className="">Zugo</div>
+            <div>© 2023</div>
+          </div>
+          {/* second column */}
+          <div className="flex flex-col gap-2">
+            <div className="font-bold">Company</div>
+            <div>About</div>
+            <div>Careers</div>
+            <div>Team</div>
+          </div>
+          {/* third column */}
+          <div className="flex flex-col gap-2">
+            <div className="font-bold">Contact Us</div>
+            <div>Help & Support</div>
+            <div>Partner with us</div>
+          </div>
+          <div className="flex flex-col gap-2">
+            <div className="font-bold">Legal</div>
+            <div>Terms & Conditions</div>
+            <div>Cookie Policy</div>
+            <div>Privacy Policy</div>
+          </div>
+          {/* fourth column */}
+          <div className="flex flex-col gap-2">
+            <div className="font-bold">We deliver to</div>
+            <div>Bangalore</div>
+            <div>Guragon</div>
+            <div>Hyderabad</div>
+            <div>Delhi</div>
+            <div>Tamil Nadu</div>
+          </div>
         </div>
       </div>
     </div>
