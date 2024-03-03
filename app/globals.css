@@ -96,3 +96,19 @@
 .scrollbar::-webkit-scrollbar-thumb {
   box-shadow: inset 0 0 6px rgba(0, 0, 0, 0.3);
 }
+
+body {
+  width: 100vw !important;
+  background-color: white;
+  color: inherit;
+}
+main::after {
+  content: "";
+  position: absolute;
+  background: rgba(255, 217, 0, 0.938);
+  height: 100%;
+  width: 41%;
+  right: 0;
+  top: 0;
+  z-index: -10;
+}

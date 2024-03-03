@@ -8,11 +8,15 @@ main {
   width: 100vw;
   position: relative;
 }
-
+.text-shad {
+  text-shadow: 3px 2px 10px #ef420e, 3px 2px 10px gold;
+  color: rgb(220, 38, 38);
+  font-family: "Times New Roman", Times, serif;
+}
 main::after {
   content: "";
   position: absolute;
-  background: #ffc535;
+  background: rgba(255, 217, 0, 0.938);
   height: 100%;
   width: 41%;
   right: 0;
@@ -133,8 +137,24 @@ h1 span {
   color: #ef420e;
   display: flex;
   gap: 5px;
+  animation-name: slide-left;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
+@keyframes slide-left {
+  0% {
+    opacity: 0;
+    transform: translateX(-200%);
+  }
+  100% {
+    opacity: 1;
+    transform: translateX(0%);
+  }
+}
 .rating i {
   font-size: 20px;
 }
@@ -145,12 +165,11 @@ h1 span {
 
 .text p {
   font-family: "Poppins", sans-serif;
-  font-size: 12px;
+  font-size: 16px;
   width: 30%;
   margin-top: 25px;
   line-height: 1.8;
   font-weight: 500;
-  color: #888;
 }
 
 .ingredients {
@@ -253,33 +272,101 @@ h1 span {
 
 .layer-4 {
   top: calc(100% - 400px);
+  animation-name: slide-in;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
   z-index: -3;
+}
+@keyframes slide-in {
+  0% {
+    opacity: 0;
+    top: 600px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-in3 {
+  0% {
+    opacity: 0;
+    top: 400px;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .layer-3 {
   top: calc(100% - 460px);
   z-index: -2;
+  animation-name: slide-in3;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-out {
+  0% {
+    opacity: 0;
+    top: -400px;
+  }
+  100% {
+    opacity: 1;
+  }
+}
+@keyframes slide-out2 {
+  0% {
+    opacity: 0;
+    top: -600px;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 .layer-2 {
   top: calc(100% - 510px);
   z-index: -1;
+  animation-name: slide-out;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+.icons {
+  animation-name: slide-left;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 .layer-1 {
   top: calc(100% - 600px);
   z-index: 1;
   scale: 1.2;
+  animation-name: slide-out2;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
 }
 
 .nutrition {
   position: absolute;
   z-index: 10;
   display: flex;
-  top: 20px;
-  right: -150px;
+  top: -5px;
+  right: -200px;
   gap: 5px;
 }
 
 .calories {
-  background: url("/public/images/frame.png") no-repeat;
+  background: url("/images/frame.png") no-repeat;
   background-size: contain;
   height: 200px;
   width: 80px;
@@ -303,6 +390,21 @@ h1 span {
   top: 150px;
   right: -100px;
   width: 350px;
+  animation-name: slide-right;
+  animation-duration: 1.5s;
+  animation-timing-function: ease-in-out;
+  animation-iteration-count: 1;
+  animation-delay: 2s;
+  animation-fill-mode: forwards;
+}
+@keyframes slide-right {
+  0% {
+    opacity: 0;
+    right: -600px;
+  }
+  100% {
+    opacity: 1;
+  }
 }
 
 .next-img img {
@@ -313,8 +415,8 @@ h1 span {
 
 footer {
   position: absolute;
-  bottom: 30px;
-  left: 130px;
+  top: 80%;
+  left: 150px;
   display: flex;
   align-items: center;
   width: 100%;
@@ -333,17 +435,38 @@ footer {
 .option.active {
   opacity: 1;
 }
+@media screen and (max-width: 789px) {
+  .hide {
+    display: none !important;
+  }
+  .design {
+    margin: 20px;
+    min-width: 40%;
+  }
+  .layerimp {
+    flex: 1;
+    transform: scale(0.5) translateX(-30%);
+  }
+  .dep {
+    right: -10px;
+    top: -90px;
+  }
+  .back {
+    transform: scale(0.5);
+    top: 420px;
+    right: -160px;
+  }
+}
 
 .option img {
   width: 100%;
   object-fit: contain;
 }
-
 .navigate {
   display: flex;
   position: absolute;
   left: 50%;
-  transform: translateX(-100px);
+  transform: translateX(-65%);
   gap: 150px;
 }
 
